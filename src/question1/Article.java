@@ -34,9 +34,15 @@ public class Article {
         this.content = content;
     }
 
+    public ArticleMemento createMemento() {
+        return new ArticleMemento(id, title, content);
+    }
 
 
     public void restore(ArticleMemento articleMemento) {
+        this.id = articleMemento.getId();
+        this.title = articleMemento.getTitle();
+        this.content = articleMemento.getContent();
     }
 
     @Override
